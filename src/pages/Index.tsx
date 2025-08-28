@@ -14,7 +14,7 @@ const Index = () => {
         </p>
         <Link to="/my-corner">
           <Button size="lg" className="mt-6">
-            Go to My Corner
+            Try it
           </Button>
         </Link>
       </div>
