@@ -40,6 +40,25 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
       <Card className="w-full max-w-md shadow-lg">
+        {/* New section for Dashboard and Settings navigation */}
+        <div className="flex justify-end p-2 border-b border-gray-200 dark:border-gray-700">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/dashboard")}
+            className="text-sm px-3 py-2"
+          >
+            Dashboard
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/dashboard/settings")}
+            className="text-sm px-3 py-2 ml-2"
+          >
+            Settings
+          </Button>
+        </div>
+
+        {/* Existing section for Login and Sign Up tabs */}
         <div className="flex border-b border-gray-200 dark:border-gray-700">
           <Button
             variant="ghost"
@@ -66,7 +85,7 @@ const LoginPage = () => {
             Sign Up
           </Button>
         </div>
-        <CardHeader className="text-center pt-6"> {/* Adjusted padding-top */}
+        <CardHeader className="text-center pt-6">
           <CardTitle className="text-3xl font-bold">
             {isLoginMode ? "Welcome Back" : "Join Us"}
           </CardTitle>
