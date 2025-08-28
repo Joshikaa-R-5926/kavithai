@@ -67,6 +67,11 @@ const LoginPage = () => {
               Sign up
             </Link>
           </div>
+          <div className="mt-4 text-center text-sm">
+            <Link to="/" className="text-gray-500 hover:underline dark:text-gray-400">
+              ← Back to Home
+            </Link>
+          </div>
         </CardContent>
       </Card>
     </div>
