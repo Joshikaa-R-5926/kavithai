@@ -3,13 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Dashboard from "./pages/Dashboard";
-import DashboardOverview from "./pages/DashboardOverview";
-import KavithaiCreator from "./pages/KavithaiCreator";
-import SettingsPage from "./pages/SettingsPage";
-import ContentEditor from "./pages/ContentEditor"; // Import the new ContentEditor
 
 const queryClient = new QueryClient();
 
@@ -20,14 +15,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          {/* Dashboard and its nested routes */}
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route index element={<DashboardOverview />} />
-            <Route path="kavithai" element={<KavithaiCreator />} />
-            <Route path="editor" element={<ContentEditor />} /> {/* New route for Content Editor */}
-            <Route path="settings" element={<SettingsPage />} />
-          </Route>
+          <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
