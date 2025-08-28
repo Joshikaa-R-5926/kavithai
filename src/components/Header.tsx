@@ -15,6 +15,15 @@ const Header = () => {
         <Link to="/my-corner">
           <Button variant="ghost">My Corner</Button>
         </Link>
+        <Link to="/features">
+          <Button variant="ghost">Features</Button>
+        </Link>
+        <Link to="/what-is-about">
+          <Button variant="ghost">What is About</Button>
+        </Link>
+        <Link to="/questions">
+          <Button variant="ghost">Questions</Button>
+        </Link>
       </nav>
     </header>
   );

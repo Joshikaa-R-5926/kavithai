@@ -5,8 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import MyCorner from "./pages/MyCorner";
+import Features from "./pages/Features"; // Import new page
+import WhatIsAbout from "./pages/WhatIsAbout"; // Import new page
+import Questions from "./pages/Questions"; // Import new page
 import NotFound from "./pages/NotFound";
-import Header from "./components/Header"; // Import the new Header component
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -16,10 +19,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Header /> {/* Add the Header component here */}
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/my-corner" element={<MyCorner />} />
+          <Route path="/features" element={<Features />} /> {/* New route */}
+          <Route path="/what-is-about" element={<WhatIsAbout />} /> {/* New route */}
+          <Route path="/questions" element={<Questions />} /> {/* New route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
