@@ -7,11 +7,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { showSuccess, showError } from "@/utils/toast";
+import { cn } from "@/lib/utils"; // Import cn for conditional class names
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isLoginMode, setIsLoginMode] = React.useState(true); // State to manage active tab
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,17 +27,57 @@ const LoginPage = () => {
     }
   };
 
+  // For now, sign up will just show a toast and switch to login mode
+  const handleSignUp = (e: React.FormEvent) => {
+    e.preventDefault();
+    showSuccess("Sign Up successful! Please log in.");
+    console.log("Signing up with:", { email, password });
+    setEmail("");
+    setPassword("");
+    setIsLoginMode(true); // Switch back to login after sign up
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
       <Card className="w-full max-w-md shadow-lg">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold">Welcome Back</CardTitle>
+        <div className="flex border-b border-gray-200 dark:border-gray-700">
+          <Button
+            variant="ghost"
+            onClick={() => setIsLoginMode(true)}
+            className={cn(
+              "flex-1 text-lg font-semibold py-4 rounded-none",
+              isLoginMode
+                ? "border-b-2 border-primary text-primary"
+                : "text-gray-500 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800"
+            )}
+          >
+            Login
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => setIsLoginMode(false)}
+            className={cn(
+              "flex-1 text-lg font-semibold py-4 rounded-none",
+              !isLoginMode
+                ? "border-b-2 border-primary text-primary"
+                : "text-gray-500 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800"
+            )}
+          >
+            Sign Up
+          </Button>
+        </div>
+        <CardHeader className="text-center pt-6"> {/* Adjusted padding-top */}
+          <CardTitle className="text-3xl font-bold">
+            {isLoginMode ? "Welcome Back" : "Join Us"}
+          </CardTitle>
           <CardDescription className="text-gray-600 dark:text-gray-400">
-            Enter your credentials to access your account.
+            {isLoginMode
+              ? "Enter your credentials to access your account."
+              : "Create an account to get started."}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={isLoginMode ? handleLogin : handleSignUp} className="space-y-6">
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -58,7 +100,7 @@ const LoginPage = () => {
               />
             </div>
             <Button type="submit" className="w-full py-3 text-lg">
-              Login
+              {isLoginMode ? "Login" : "Sign Up"}
             </Button>
           </form>
         </CardContent>
