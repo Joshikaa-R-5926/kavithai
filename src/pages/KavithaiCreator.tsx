@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { showSuccess } from "@/utils/toast";
+import { showSuccess, showError } from "@/utils/toast"; // Ensure showError is imported
+import BackButton from "@/components/BackButton"; // Import BackButton
 
 const KavithaiCreator = () => {
   const [kavithaiText, setKavithaiText] = React.useState<string>("");
@@ -22,6 +23,9 @@ const KavithaiCreator = () => {
 
   return (
     <div className="p-6">
+      <div className="mb-4">
+        <BackButton />
+      </div>
       <h1 className="text-3xl font-bold mb-6">Kavithai Creator</h1>
       <Card className="w-full max-w-3xl shadow-lg mx-auto">
         <CardHeader>

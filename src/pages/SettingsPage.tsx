@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { showSuccess } from "@/utils/toast";
+import BackButton from "@/components/BackButton"; // Import BackButton
 
 const SettingsPage = () => {
   const [username, setUsername] = React.useState("JohnDoe");
@@ -20,6 +21,9 @@ const SettingsPage = () => {
 
   return (
     <div className="p-6">
+      <div className="mb-4">
+        <BackButton />
+      </div>
       <h1 className="text-3xl font-bold mb-6">Settings</h1>
       <Card className="w-full max-w-2xl shadow-lg mx-auto">
         <CardHeader>

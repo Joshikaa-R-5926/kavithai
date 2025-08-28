@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { showSuccess } from "@/utils/toast";
+import BackButton from "@/components/BackButton"; // Import BackButton
 
 const DashboardOverview = () => {
   const navigate = useNavigate();
@@ -16,6 +17,9 @@ const DashboardOverview = () => {
 
   return (
     <div className="p-6">
+      <div className="mb-4">
+        <BackButton />
+      </div>
       <h1 className="text-3xl font-bold mb-6">Dashboard Overview</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Card className="shadow-lg">

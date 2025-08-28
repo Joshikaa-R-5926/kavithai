@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { showSuccess, showError } from "@/utils/toast";
+import BackButton from "@/components/BackButton"; // Import BackButton
 
 const ContentEditor = () => {
   const [title, setTitle] = React.useState<string>("");
@@ -25,6 +26,9 @@ const ContentEditor = () => {
 
   return (
     <div className="p-6">
+      <div className="mb-4">
+        <BackButton />
+      </div>
       <h1 className="text-3xl font-bold mb-6">Content Editor</h1>
       <Card className="w-full max-w-4xl shadow-lg mx-auto">
         <CardHeader>

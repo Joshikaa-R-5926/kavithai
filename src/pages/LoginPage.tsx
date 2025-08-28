@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { showSuccess, showError } from "@/utils/toast";
 import { cn } from "@/lib/utils"; // Import cn for conditional class names
+import BackButton from "@/components/BackButton"; // Import BackButton
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -40,22 +41,25 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
       <Card className="w-full max-w-md shadow-lg">
-        {/* New section for Dashboard and Settings navigation */}
-        <div className="flex justify-end p-2 border-b border-gray-200 dark:border-gray-700">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/dashboard")}
-            className="text-sm px-3 py-2"
-          >
-            Dashboard
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/dashboard/settings")}
-            className="text-sm px-3 py-2 ml-2"
-          >
-            Settings
-          </Button>
+        {/* Back button added here */}
+        <div className="flex justify-between items-center p-2 border-b border-gray-200 dark:border-gray-700">
+          <BackButton />
+          <div className="flex">
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/dashboard")}
+              className="text-sm px-3 py-2"
+            >
+              Dashboard
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/dashboard/settings")}
+              className="text-sm px-3 py-2 ml-2"
+            >
+              Settings
+            </Button>
+          </div>
         </div>
 
         {/* Existing section for Login and Sign Up tabs */}
