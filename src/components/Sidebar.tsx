@@ -3,7 +3,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Home, Settings, PenTool } from "lucide-react"; // Using lucide-react for icons
+import { Home, Settings, PenTool, Edit } from "lucide-react"; // Added Edit icon
 
 const Sidebar = () => {
   const navItems = [
@@ -16,6 +16,11 @@ const Sidebar = () => {
       name: "Kavithai Creator",
       href: "/dashboard/kavithai",
       icon: PenTool,
+    },
+    {
+      name: "Content Editor", // New item for editing options
+      href: "/dashboard/editor",
+      icon: Edit, // Using the Edit icon
     },
     {
       name: "Settings",
