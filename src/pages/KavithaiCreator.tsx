@@ -29,8 +29,8 @@ ${inputPoem}
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-gray-900">
-      <Card className="w-full max-w-2xl shadow-lg">
+    <div className="p-6"> {/* Removed min-h-screen and flex centering as it's now part of a layout */}
+      <Card className="w-full max-w-2xl shadow-lg mx-auto"> {/* Added mx-auto for centering within its container */}
         <CardHeader>
           <CardTitle className="text-3xl font-bold text-center">Kavithai Creator</CardTitle>
           <CardDescription className="text-center text-gray-600 dark:text-gray-400">

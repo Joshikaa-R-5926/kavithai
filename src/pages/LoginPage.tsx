@@ -23,7 +23,7 @@ const LoginPage = () => {
     // Placeholder for actual authentication logic
     console.log("Attempting to log in with:", { email, password });
     showSuccess("Login successful! (Placeholder)");
-    navigate("/home"); // Redirect to the new home route after login
+    navigate("/dashboard"); // Redirect to the new dashboard route after login
   };
 
   return (
@@ -75,8 +75,8 @@ const LoginPage = () => {
             </Link>
           </div>
           <div className="mt-4 text-center text-sm">
-            <Link to="/home" className="text-gray-500 hover:underline dark:text-gray-400">
-              ← Back to Home
+            <Link to="/dashboard" className="text-gray-500 hover:underline dark:text-gray-400">
+              ← Back to Dashboard
             </Link>
           </div>
         </CardContent>
