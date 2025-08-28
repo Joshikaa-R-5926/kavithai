@@ -11,6 +11,24 @@ const FrontPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
       <Card className="w-full max-w-2xl text-center shadow-2xl bg-white dark:bg-gray-800">
+        {/* New header section for About and Login buttons */}
+        <div className="flex justify-end p-4 border-b border-gray-200 dark:border-gray-700">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/about")}
+            className="text-sm px-3 py-2"
+          >
+            About
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/login")}
+            className="text-sm px-3 py-2 ml-2"
+          >
+            Login
+          </Button>
+        </div>
+
         <CardHeader className="pb-6">
           <CardTitle className="text-5xl font-extrabold text-gray-900 dark:text-gray-50 mb-4">
             Welcome to My App
