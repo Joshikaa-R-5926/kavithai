@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { showSuccess, showError } from "@/utils/toast"; // Assuming you have these toast utilities
+import { showSuccess, showError } from "@/utils/toast";
+import { Separator } from "@/components/ui/separator"; // Import Separator
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
@@ -48,7 +49,12 @@ const LoginPage = () => {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="password">Password</Label>
+              <div className="flex items-center justify-between">
+                <Label htmlFor="password">Password</Label>
+                <Link to="/forgot-password" className="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                  Forgot password?
+                </Link>
+              </div>
               <Input
                 id="password"
                 type="password"
@@ -61,6 +67,7 @@ const LoginPage = () => {
               Login
             </Button>
           </form>
+          <Separator className="my-6" /> {/* Added separator */}
           <div className="mt-6 text-center text-sm">
             Don't have an account?{" "}
             <Link to="/register" className="text-blue-500 hover:underline">
