@@ -10,7 +10,8 @@ import DashboardOverview from "./pages/DashboardOverview";
 import KavithaiCreator from "./pages/KavithaiCreator";
 import SettingsPage from "./pages/SettingsPage";
 import ContentEditor from "./pages/ContentEditor";
-import FrontPage from "./pages/FrontPage"; // Import the new FrontPage
+import FrontPage from "./pages/FrontPage";
+import AboutPage from "./pages/AboutPage"; // Import the new AboutPage
 
 const queryClient = new QueryClient();
 
@@ -21,8 +22,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<FrontPage />} /> {/* New FrontPage at root */}
-          <Route path="/login" element={<LoginPage />} /> {/* LoginPage moved to /login */}
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/about" element={<AboutPage />} /> {/* New AboutPage route */}
           {/* Dashboard and its nested routes */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index element={<DashboardOverview />} />
