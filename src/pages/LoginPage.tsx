@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { showSuccess, showError } from "@/utils/toast";
-import { Separator } from "@/components/ui/separator"; // Import Separator
+import { Separator } from "@/components/ui/separator";
 
 const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
@@ -23,7 +23,7 @@ const LoginPage = () => {
     // Placeholder for actual authentication logic
     console.log("Attempting to log in with:", { email, password });
     showSuccess("Login successful! (Placeholder)");
-    navigate("/"); // Redirect to home or dashboard after login
+    navigate("/home"); // Redirect to the new home route after login
   };
 
   return (
@@ -67,7 +67,7 @@ const LoginPage = () => {
               Login
             </Button>
           </form>
-          <Separator className="my-6" /> {/* Added separator */}
+          <Separator className="my-6" />
           <div className="mt-6 text-center text-sm">
             Don't have an account?{" "}
             <Link to="/register" className="text-blue-500 hover:underline">
@@ -75,7 +75,7 @@ const LoginPage = () => {
             </Link>
           </div>
           <div className="mt-4 text-center text-sm">
-            <Link to="/" className="text-gray-500 hover:underline dark:text-gray-400">
+            <Link to="/home" className="text-gray-500 hover:underline dark:text-gray-400">
               ← Back to Home
             </Link>
           </div>
