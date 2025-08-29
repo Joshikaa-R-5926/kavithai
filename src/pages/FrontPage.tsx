@@ -78,7 +78,7 @@ const FrontPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-500 to-purple-600">
+    <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-sky-400 to-blue-500">
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
         <div className="w-full max-w-5xl mx-auto flex justify-between items-center p-4">
