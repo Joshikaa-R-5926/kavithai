@@ -107,13 +107,6 @@ const FrontPage = () => {
             </Button>
             <Button
               variant="ghost"
-              onClick={() => navigate("/dashboard")}
-              className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
-            >
-              Dashboard
-            </Button>
-            <Button
-              variant="ghost"
               onClick={() => navigate("/login")}
               className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
             >
