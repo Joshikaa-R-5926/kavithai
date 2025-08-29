@@ -79,8 +79,8 @@ const FrontPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-500 to-purple-600">
-      <div className="w-full p-4">
-        {/* Header for About, Login, and Dashboard buttons */}
+      {/* Sticky Header */}
+      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg">
         <div className="w-full max-w-5xl mx-auto flex justify-between items-center p-4">
           <Logo className="text-white" />
           <div>
@@ -121,9 +121,11 @@ const FrontPage = () => {
             </Button>
           </div>
         </div>
+      </header>
 
+      <main className="w-full">
         {/* Main Hero Section */}
-        <section className="w-full max-w-5xl mx-auto py-20 text-white">
+        <section className="w-full max-w-5xl mx-auto py-20 text-white px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-center md:text-left">
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight opacity-0 animate-fade-in-down">
@@ -162,7 +164,7 @@ const FrontPage = () => {
         </section>
 
         {/* Features Section */}
-        <section className="w-full max-w-4xl text-center py-12 mx-auto">
+        <section className="w-full max-w-4xl text-center py-12 mx-auto px-4">
           <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -178,7 +180,7 @@ const FrontPage = () => {
         </section>
 
         {/* Categories Section */}
-        <section id="categories-section" className="w-full max-w-5xl text-center py-12 mx-auto">
+        <section id="categories-section" className="w-full max-w-5xl text-center py-12 mx-auto px-4">
           <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">Explore Our Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((category, index) => (
@@ -197,7 +199,7 @@ const FrontPage = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="w-full max-w-4xl text-center py-16 mx-auto">
+        <section className="w-full max-w-4xl text-center py-16 mx-auto px-4">
           <Card className="bg-white/90 dark:bg-gray-800/90 shadow-xl p-8 md:p-12 rounded-lg backdrop-blur-sm opacity-0 animate-fade-in-up">
             <CardHeader>
               <CardTitle className="text-4xl font-extrabold text-gray-900 dark:text-gray-50">
@@ -228,7 +230,7 @@ const FrontPage = () => {
         </section>
 
         {/* About Us Section */}
-        <section id="about-us-section" className="w-full max-w-4xl text-center py-12 mx-auto">
+        <section id="about-us-section" className="w-full max-w-4xl text-center py-12 mx-auto px-4">
           <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">About Us</h2>
           <Card className="w-full shadow-lg bg-white dark:bg-gray-800 opacity-0 animate-fade-in-up">
             <CardHeader className="text-center pt-6">
@@ -252,7 +254,7 @@ const FrontPage = () => {
         </section>
 
         {/* Contact Us Section */}
-        <section id="contact-us-section" className="w-full max-w-4xl text-center py-12 mx-auto">
+        <section id="contact-us-section" className="w-full max-w-4xl text-center py-12 mx-auto px-4">
           <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">Contact Us</h2>
           <Card className="w-full shadow-lg bg-white dark:bg-gray-800 text-left opacity-0 animate-fade-in-up">
             <CardHeader className="text-center">
@@ -315,7 +317,7 @@ const FrontPage = () => {
             </CardContent>
           </Card>
         </section>
-      </div>
+      </main>
 
       {/* Footer */}
       <footer className="w-full bg-gray-900 text-gray-300 py-12 mt-auto">
