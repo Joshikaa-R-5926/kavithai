@@ -4,16 +4,16 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, Feather, FileEdit, Settings, User, Palette, Music } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar components
+import { Home, Feather, FileEdit, Settings, User, Palette, Music } from "lucide-react"; // Import new icons
 
 const Sidebar = () => {
   const location = useLocation();
 
   // Fake user data for the sidebar profile
   const currentUser = {
-    name: "Joe", // Changed from "Jane Doe" to "Joe"
-    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Joe", // Updated avatar URL
+    name: "Jane Doe",
+    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Jane", // Example avatar URL
   };
 
   const navItems = [
@@ -35,16 +35,17 @@ const Sidebar = () => {
     {
       name: "Background",
       href: "/dashboard/background",
-      icon: Palette,
+      icon: Palette, // New icon for Background
     },
     {
       name: "Song Adding",
       href: "/dashboard/song-adding",
-      icon: Music,
+      icon: Music, // New icon for Song Adding
     },
     {
       name: "Settings",
       href: "/dashboard/settings",
+      icon: Settings,
     },
   ];
 
