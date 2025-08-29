@@ -5,10 +5,18 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { showSuccess } from "@/utils/toast";
-import BackButton from "@/components/BackButton"; // Import BackButton
+import BackButton from "@/components/BackButton";
+import UserProfileCard from "@/components/UserProfileCard"; // Import the new component
 
 const DashboardOverview = () => {
   const navigate = useNavigate();
+
+  // Fake user data for the profile card
+  const currentUser = {
+    name: "Jane Doe",
+    email: "jane.doe@example.com",
+    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Jane", // Example avatar URL
+  };
 
   const handleLogout = () => {
     showSuccess("Logged out successfully!");
@@ -22,6 +30,11 @@ const DashboardOverview = () => {
       </div>
       <h1 className="text-3xl font-bold mb-6">Dashboard Overview</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* User Profile Card */}
+        <div className="md:col-span-2 lg:col-span-3"> {/* Make it span full width on larger screens */}
+          <UserProfileCard user={currentUser} />
+        </div>
+
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle>Welcome!</CardTitle>
