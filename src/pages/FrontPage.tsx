@@ -27,10 +27,21 @@ const FrontPage = () => {
     },
   ];
 
+  const scrollToAbout = () => {
+    document.getElementById("about-us-section")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
-      {/* Header for Login and Dashboard buttons */}
+      {/* Header for About, Login, and Dashboard buttons */}
       <div className="w-full max-w-4xl flex justify-end p-4">
+        <Button
+          variant="ghost"
+          onClick={scrollToAbout}
+          className="text-white hover:bg-white/20 text-sm px-3 py-2"
+        >
+          About
+        </Button>
         <Button
           variant="ghost"
           onClick={() => navigate("/dashboard")}
@@ -89,7 +100,7 @@ const FrontPage = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="w-full max-w-4xl text-center py-12">
+      <section id="about-us-section" className="w-full max-w-4xl text-center py-12">
         <h2 className="text-4xl font-bold text-white mb-10">About Us</h2>
         <Card className="w-full shadow-lg bg-white dark:bg-gray-800">
           <CardHeader className="text-center pt-6">
