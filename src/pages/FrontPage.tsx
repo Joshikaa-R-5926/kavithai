@@ -29,15 +29,8 @@ const FrontPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
-      {/* Header for About, Login, and Dashboard buttons */}
+      {/* Header for Login and Dashboard buttons */}
       <div className="w-full max-w-4xl flex justify-end p-4">
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/about")}
-          className="text-white hover:bg-white/20 text-sm px-3 py-2"
-        >
-          About
-        </Button>
         <Button
           variant="ghost"
           onClick={() => navigate("/dashboard")}
@@ -93,6 +86,30 @@ const FrontPage = () => {
             </Card>
           ))}
         </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="w-full max-w-4xl text-center py-12">
+        <h2 className="text-4xl font-bold text-white mb-10">About Us</h2>
+        <Card className="w-full shadow-lg bg-white dark:bg-gray-800">
+          <CardHeader className="text-center pt-6">
+            <CardTitle className="text-3xl font-bold text-gray-900 dark:text-gray-50">About My App</CardTitle>
+            <CardDescription className="text-gray-600 dark:text-gray-400">
+              Learn more about what we do.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4 text-lg text-gray-700 dark:text-gray-200">
+            <p>
+              Welcome to My App, your dedicated platform for creative expression and content management. We believe in empowering users to craft beautiful Kavithai (poems) and manage their digital content with ease.
+            </p>
+            <p>
+              Our mission is to provide a seamless and intuitive experience for writers, creators, and anyone looking to organize their thoughts and projects. With a focus on simplicity and functionality, My App helps you bring your ideas to life.
+            </p>
+            <p>
+              Thank you for being a part of our community!
+            </p>
+          </CardContent>
+        </Card>
       </section>
     </div>
   );
