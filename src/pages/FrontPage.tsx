@@ -93,10 +93,10 @@ const FrontPage = () => {
             </Button>
             <Button
               variant="ghost"
-              onClick={scrollToAbout}
+              onClick={() => navigate("/dashboard")}
               className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
             >
-              About
+              Dashboard
             </Button>
             <Button
               variant="ghost"
@@ -107,10 +107,10 @@ const FrontPage = () => {
             </Button>
             <Button
               variant="ghost"
-              onClick={() => navigate("/dashboard")}
+              onClick={scrollToAbout}
               className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
             >
-              Dashboard
+              About
             </Button>
             <Button
               variant="ghost"
