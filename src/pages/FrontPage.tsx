@@ -29,7 +29,7 @@ const FrontPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
-      {/* Header for About and Login buttons */}
+      {/* Header for About, Login, and Dashboard buttons */}
       <div className="w-full max-w-4xl flex justify-end p-4">
         <Button
           variant="ghost"
@@ -37,6 +37,13 @@ const FrontPage = () => {
           className="text-white hover:bg-white/20 text-sm px-3 py-2"
         >
           About
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => navigate("/dashboard")}
+          className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
+        >
+          Dashboard
         </Button>
         <Button
           variant="ghost"
@@ -67,13 +74,6 @@ const FrontPage = () => {
               className="px-8 py-4 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
             >
               Get Started
-            </Button>
-            <Button
-              onClick={() => navigate("/dashboard")}
-              variant="outline"
-              className="px-8 py-4 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors duration-200"
-            >
-              View Dashboard
             </Button>
           </div>
         </CardContent>
