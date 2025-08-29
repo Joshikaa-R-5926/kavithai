@@ -4,8 +4,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Feather, FileEdit, Settings } from "lucide-react";
-import Logo from "@/components/Logo"; // Import the new Logo component
+import { Feather, FileEdit, Settings, FileText, Music, Palette } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const FrontPage = () => {
   const navigate = useNavigate();
@@ -28,6 +28,33 @@ const FrontPage = () => {
     },
   ];
 
+  const categories = [
+    {
+      icon: Feather,
+      title: "Kavithai",
+      description: "Dive into the world of poetry. Create, share, and read beautiful Kavithai.",
+      link: "/dashboard/kavithai",
+    },
+    {
+      icon: FileText,
+      title: "Articles & Posts",
+      description: "Write and manage your articles, blog posts, or any other long-form content.",
+      link: "/dashboard/editor",
+    },
+    {
+      icon: Music,
+      title: "Song Lyrics",
+      description: "Add and organize the lyrics for your favorite songs or your own compositions.",
+      link: "/dashboard/song-adding",
+    },
+    {
+      icon: Palette,
+      title: "Custom Backgrounds",
+      description: "Personalize your workspace by changing the background color or image.",
+      link: "/dashboard/background",
+    },
+  ];
+
   const scrollToAbout = () => {
     document.getElementById("about-us-section")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -35,7 +62,7 @@ const FrontPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
       {/* Header for About, Login, and Dashboard buttons */}
-      <div className="w-full max-w-4xl flex justify-between items-center p-4">
+      <div className="w-full max-w-5xl flex justify-between items-center p-4">
         <Logo className="text-white" />
         <div>
           <Button
@@ -98,6 +125,25 @@ const FrontPage = () => {
               <CardDescription className="text-gray-600 dark:text-gray-300">
                 {feature.description}
               </CardDescription>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className="w-full max-w-5xl text-center py-12">
+        <h2 className="text-4xl font-bold text-white mb-10">Explore Our Categories</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {categories.map((category, index) => (
+            <Card key={index} className="bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+              <category.icon className="h-12 w-12 text-primary mb-4" />
+              <CardTitle className="text-xl font-semibold mb-2">{category.title}</CardTitle>
+              <CardDescription className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                {category.description}
+              </CardDescription>
+              <Button onClick={() => navigate(category.link)} variant="outline" className="mt-auto">
+                Explore
+              </Button>
             </Card>
           ))}
         </div>
