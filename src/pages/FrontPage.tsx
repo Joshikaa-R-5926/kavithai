@@ -170,6 +170,37 @@ const FrontPage = () => {
         </div>
       </section>
 
+      {/* Call to Action Section */}
+      <section className="w-full max-w-4xl text-center py-16">
+        <Card className="bg-white/90 dark:bg-gray-800/90 shadow-xl p-8 md:p-12 rounded-lg backdrop-blur-sm">
+          <CardHeader>
+            <CardTitle className="text-4xl font-extrabold text-gray-900 dark:text-gray-50">
+              Ready to Unleash Your Creativity?
+            </CardTitle>
+            <CardDescription className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+              Join our community of creators today and start bringing your ideas to life. It's free to get started!
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+              <Button
+                onClick={() => navigate("/login")}
+                className="px-10 py-6 text-xl font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-transform transform hover:scale-105 duration-300"
+              >
+                Sign Up Now
+              </Button>
+              <Button
+                onClick={() => navigate("/dashboard")}
+                variant="outline"
+                className="px-10 py-6 text-xl font-bold transition-transform transform hover:scale-105 duration-300"
+              >
+                Explore Dashboard
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* About Us Section */}
       <section id="about-us-section" className="w-full max-w-4xl text-center py-12">
         <h2 className="text-4xl font-bold text-white mb-10">About Us</h2>
