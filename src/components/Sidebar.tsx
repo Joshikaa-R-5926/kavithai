@@ -4,8 +4,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Home, Feather, FileEdit, Settings, User } from "lucide-react"; // Import User icon
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar components
+import { Home, Feather, FileEdit, Settings, User, Palette, Music } from "lucide-react"; // Import new icons
 
 const Sidebar = () => {
   const location = useLocation();
@@ -31,6 +30,16 @@ const Sidebar = () => {
       name: "Content Editor",
       href: "/dashboard/editor",
       icon: FileEdit,
+    },
+    {
+      name: "Background",
+      href: "/dashboard/background",
+      icon: Palette, // New icon for Background
+    },
+    {
+      name: "Song Adding",
+      href: "/dashboard/song-adding",
+      icon: Music, // New icon for Song Adding
     },
     {
       name: "Settings",

@@ -11,6 +11,8 @@ import KavithaiCreator from "./pages/KavithaiCreator";
 import SettingsPage from "./pages/SettingsPage";
 import ContentEditor from "./pages/ContentEditor";
 import FrontPage from "./pages/FrontPage";
+import BackgroundPage from "./pages/BackgroundPage"; // New import
+import SongAddingPage from "./pages/SongAddingPage"; // New import
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
             <Route index element={<DashboardOverview />} />
             <Route path="kavithai" element={<KavithaiCreator />} />
             <Route path="editor" element={<ContentEditor />} />
+            <Route path="background" element={<BackgroundPage />} /> {/* New route */}
+            <Route path="song-adding" element={<SongAddingPage />} /> {/* New route */}
             <Route path="settings" element={<SettingsPage />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
