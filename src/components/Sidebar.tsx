@@ -4,6 +4,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar components
 import { Home, Feather, FileEdit, Settings, User, Palette, Music } from "lucide-react"; // Import new icons
 
 const Sidebar = () => {
