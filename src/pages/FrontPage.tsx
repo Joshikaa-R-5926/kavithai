@@ -67,6 +67,10 @@ const FrontPage = () => {
     document.getElementById("contact-us-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToCategories = () => {
+    document.getElementById("categories-section")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     showSuccess("Your message has been sent!");
@@ -82,8 +86,15 @@ const FrontPage = () => {
           <div>
             <Button
               variant="ghost"
-              onClick={scrollToContact}
+              onClick={scrollToCategories}
               className="text-white hover:bg-white/20 text-sm px-3 py-2"
+            >
+              Explore
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={scrollToContact}
+              className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
             >
               Contact
             </Button>
@@ -153,7 +164,7 @@ const FrontPage = () => {
         </section>
 
         {/* Categories Section */}
-        <section className="w-full max-w-5xl text-center py-12 mx-auto">
+        <section id="categories-section" className="w-full max-w-5xl text-center py-12 mx-auto">
           <h2 className="text-4xl font-bold text-white mb-10">Explore Our Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((category, index) => (
