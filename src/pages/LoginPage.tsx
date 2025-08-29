@@ -9,13 +9,15 @@ import { Button } from "@/components/ui/button";
 import { showSuccess, showError } from "@/utils/toast";
 import { cn } from "@/lib/utils";
 import BackButton from "@/components/BackButton";
-import Logo from "@/components/Logo"; // Import the new Logo component
+import Logo from "@/components/Logo";
+import { Eye, EyeOff } from "lucide-react"; // Import icons
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [isLoginMode, setIsLoginMode] = React.useState(true);
+  const [showPassword, setShowPassword] = React.useState(false); // State for password visibility
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,13 +97,30 @@ const LoginPage = () => {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="pr-10" // Add padding to prevent text from overlapping with the icon
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="absolute inset-y-0 right-0 h-full px-3"
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-gray-500" />
+                  )}
+                </Button>
+              </div>
             </div>
             <Button type="submit" className="w-full py-3 text-lg">
               {isLoginMode ? "Login" : "Sign Up"}
