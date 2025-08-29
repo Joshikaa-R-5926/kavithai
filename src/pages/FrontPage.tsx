@@ -93,17 +93,17 @@ const FrontPage = () => {
             </Button>
             <Button
               variant="ghost"
-              onClick={scrollToContact}
-              className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
-            >
-              Contact
-            </Button>
-            <Button
-              variant="ghost"
               onClick={scrollToAbout}
               className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
             >
               About
+            </Button>
+            <Button
+              variant="ghost"
+              onClick={scrollToContact}
+              className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
+            >
+              Contact
             </Button>
             <Button
               variant="ghost"
