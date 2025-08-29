@@ -13,9 +13,9 @@ const DashboardOverview = () => {
 
   // Fake user data for the profile card
   const currentUser = {
-    name: "Jane Doe",
-    email: "jane.doe@example.com",
-    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Jane", // Example avatar URL
+    name: "Joe",
+    email: "joe@example.com",
+    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Joe", // Example avatar URL
   };
 
   const handleLogout = () => {

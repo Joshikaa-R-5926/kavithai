@@ -12,8 +12,8 @@ const Sidebar = () => {
 
   // Fake user data for the sidebar profile
   const currentUser = {
-    name: "Jane Doe",
-    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Jane", // Example avatar URL
+    name: "Joe",
+    avatarUrl: "https://api.dicebear.com/7.x/lorelei/svg?seed=Joe", // Example avatar URL
   };
 
   const navItems = [
