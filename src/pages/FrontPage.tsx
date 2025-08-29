@@ -126,13 +126,13 @@ const FrontPage = () => {
         <section className="w-full max-w-5xl mx-auto py-20 text-white">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-center md:text-left">
-              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight opacity-0 animate-fade-in-down">
                 Unleash Your Inner Poet
               </h1>
-              <p className="text-lg md:text-xl text-white/90">
+              <p className="text-lg md:text-xl text-white/90 opacity-0 animate-fade-in-down" style={{ animationDelay: '200ms' }}>
                 Your creative hub for Kavithai and content management. Craft beautiful poems, manage your articles, and bring your ideas to life.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 opacity-0 animate-fade-in-down" style={{ animationDelay: '400ms' }}>
                 <Button
                   onClick={() => navigate("/login")}
                   className="px-8 py-4 text-lg font-semibold bg-white text-primary hover:bg-gray-200 transition-colors duration-200"
@@ -141,7 +141,7 @@ const FrontPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="hidden md:flex items-center justify-center">
+            <div className="hidden md:flex items-center justify-center opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
               <Button
                 variant="outline"
                 className="h-auto w-full p-8 bg-white/10 text-white rounded-lg shadow-2xl backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 text-left"
@@ -163,10 +163,10 @@ const FrontPage = () => {
 
         {/* Features Section */}
         <section className="w-full max-w-4xl text-center py-12 mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-10">Key Features</h2>
+          <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-center text-center">
+              <Card key={index} className="bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-center text-center opacity-0 animate-fade-in-up" style={{ animationDelay: `${200 + index * 150}ms` }}>
                 <feature.icon className="h-12 w-12 text-primary mb-4" />
                 <CardTitle className="text-xl font-semibold mb-2">{feature.title}</CardTitle>
                 <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -179,10 +179,10 @@ const FrontPage = () => {
 
         {/* Categories Section */}
         <section id="categories-section" className="w-full max-w-5xl text-center py-12 mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-10">Explore Our Categories</h2>
+          <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">Explore Our Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((category, index) => (
-              <Card key={index} className="bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
+              <Card key={index} className="bg-white dark:bg-gray-800 shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300 opacity-0 animate-fade-in-up" style={{ animationDelay: `${200 + index * 150}ms` }}>
                 <category.icon className="h-12 w-12 text-primary mb-4" />
                 <CardTitle className="text-xl font-semibold mb-2">{category.title}</CardTitle>
                 <CardDescription className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
@@ -198,7 +198,7 @@ const FrontPage = () => {
 
         {/* Call to Action Section */}
         <section className="w-full max-w-4xl text-center py-16 mx-auto">
-          <Card className="bg-white/90 dark:bg-gray-800/90 shadow-xl p-8 md:p-12 rounded-lg backdrop-blur-sm">
+          <Card className="bg-white/90 dark:bg-gray-800/90 shadow-xl p-8 md:p-12 rounded-lg backdrop-blur-sm opacity-0 animate-fade-in-up">
             <CardHeader>
               <CardTitle className="text-4xl font-extrabold text-gray-900 dark:text-gray-50">
                 Ready to Unleash Your Creativity?
@@ -229,8 +229,8 @@ const FrontPage = () => {
 
         {/* About Us Section */}
         <section id="about-us-section" className="w-full max-w-4xl text-center py-12 mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-10">About Us</h2>
-          <Card className="w-full shadow-lg bg-white dark:bg-gray-800">
+          <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">About Us</h2>
+          <Card className="w-full shadow-lg bg-white dark:bg-gray-800 opacity-0 animate-fade-in-up">
             <CardHeader className="text-center pt-6">
               <CardTitle className="text-3xl font-bold text-gray-900 dark:text-gray-50">About My App</CardTitle>
               <CardDescription className="text-gray-600 dark:text-gray-400">
@@ -253,8 +253,8 @@ const FrontPage = () => {
 
         {/* Contact Us Section */}
         <section id="contact-us-section" className="w-full max-w-4xl text-center py-12 mx-auto">
-          <h2 className="text-4xl font-bold text-white mb-10">Contact Us</h2>
-          <Card className="w-full shadow-lg bg-white dark:bg-gray-800 text-left">
+          <h2 className="text-4xl font-bold text-white mb-10 opacity-0 animate-fade-in-up">Contact Us</h2>
+          <Card className="w-full shadow-lg bg-white dark:bg-gray-800 text-left opacity-0 animate-fade-in-up">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-bold text-gray-900 dark:text-gray-50">Get in Touch</CardTitle>
               <CardDescription className="text-gray-600 dark:text-gray-400">
