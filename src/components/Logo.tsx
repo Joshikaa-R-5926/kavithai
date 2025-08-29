@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { BookOpen } from "lucide-react"; // Changed from Feather to BookOpen
+import { BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -11,9 +11,11 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
-    <Link to="/" className={cn("flex items-center space-x-2", className)}>
-      <BookOpen className="h-8 w-8" /> {/* Changed icon */}
-      <span className="text-2xl font-bold">Kavithai</span>
+    <Link to="/" className={cn("flex items-center space-x-2 group", className)}>
+      <BookOpen className="h-8 w-8 text-purple-500 group-hover:text-pink-500 transition-colors duration-300" />
+      <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:to-pink-400 transition-all duration-300">
+        Kavithai
+      </span>
     </Link>
   );
 };
