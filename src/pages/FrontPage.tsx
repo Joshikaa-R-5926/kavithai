@@ -4,8 +4,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Feather, FileEdit, Settings, FileText, Music, Palette } from "lucide-react";
+import { Feather, FileEdit, Settings, FileText, Music, Palette, Mail, Phone, MapPin } from "lucide-react";
 import Logo from "@/components/Logo";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { showSuccess } from "@/utils/toast";
 
 const FrontPage = () => {
   const navigate = useNavigate();
@@ -59,6 +63,16 @@ const FrontPage = () => {
     document.getElementById("about-us-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToContact = () => {
+    document.getElementById("contact-us-section")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    showSuccess("Your message has been sent!");
+    (e.target as HTMLFormElement).reset();
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
       {/* Header for About, Login, and Dashboard buttons */}
@@ -67,8 +81,15 @@ const FrontPage = () => {
         <div>
           <Button
             variant="ghost"
-            onClick={scrollToAbout}
+            onClick={scrollToContact}
             className="text-white hover:bg-white/20 text-sm px-3 py-2"
+          >
+            Contact
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={scrollToAbout}
+            className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
           >
             About
           </Button>
@@ -169,6 +190,71 @@ const FrontPage = () => {
             <p>
               Thank you for being a part of our community!
             </p>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Contact Us Section */}
+      <section id="contact-us-section" className="w-full max-w-4xl text-center py-12">
+        <h2 className="text-4xl font-bold text-white mb-10">Contact Us</h2>
+        <Card className="w-full shadow-lg bg-white dark:bg-gray-800 text-left">
+          <CardHeader className="text-center">
+            <CardTitle className="text-3xl font-bold text-gray-900 dark:text-gray-50">Get in Touch</CardTitle>
+            <CardDescription className="text-gray-600 dark:text-gray-400">
+              We'd love to hear from you! Send us a message or use our contact details.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid md:grid-cols-2 gap-8 p-6">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">Contact Information</h3>
+              <div className="flex items-center space-x-4">
+                <Mail className="h-6 w-6 text-primary" />
+                <div>
+                  <p className="font-semibold">Email</p>
+                  <a href="mailto:contact@kavithai.app" className="text-gray-600 dark:text-gray-300 hover:underline">
+                    contact@kavithai.app
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Phone className="h-6 w-6 text-primary" />
+                <div>
+                  <p className="font-semibold">Phone</p>
+                  <a href="tel:+1234567890" className="text-gray-600 dark:text-gray-300 hover:underline">
+                    +1 (234) 567-890
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <MapPin className="h-6 w-6 text-primary" />
+                <div>
+                  <p className="font-semibold">Address</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    123 Creative Lane, Poem City, PC 45678
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <form onSubmit={handleContactSubmit} className="space-y-4">
+              <div className="grid gap-2">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" type="text" placeholder="Your Name" required />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="your@email.com" required />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea id="message" placeholder="Your message..." required className="min-h-[120px]" />
+              </div>
+              <Button type="submit" className="w-full py-3 text-lg">
+                Send Message
+              </Button>
+            </form>
           </CardContent>
         </Card>
       </section>
