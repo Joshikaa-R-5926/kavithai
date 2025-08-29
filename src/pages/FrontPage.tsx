@@ -141,12 +141,22 @@ const FrontPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="hidden md:block">
-              <img
-                src="https://placehold.co/600x400/FFFFFF/4F46E5?text=Creative+Space"
-                alt="Hero Illustration"
-                className="rounded-lg shadow-2xl"
-              />
+            <div className="hidden md:flex items-center justify-center">
+              <Button
+                variant="outline"
+                className="h-auto w-full p-8 bg-white/10 text-white rounded-lg shadow-2xl backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 text-left"
+                onClick={() => showSuccess("A touch of inspiration!")}
+              >
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold mb-4">Creative Space</h3>
+                  <blockquote className="border-l-4 border-white/50 pl-4 italic">
+                    <p>"The poet's pen, a feathered key,</p>
+                    <p>Unlocks the soul for all to see.</p>
+                    <p>With words as wings, on ink they fly,</p>
+                    <p>And paint the canvas of the sky."</p>
+                  </blockquote>
+                </div>
+              </Button>
             </div>
           </div>
         </section>
