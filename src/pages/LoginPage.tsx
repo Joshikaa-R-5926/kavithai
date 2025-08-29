@@ -7,19 +7,18 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { showSuccess, showError } from "@/utils/toast";
-import { cn } from "@/lib/utils"; // Import cn for conditional class names
-import BackButton from "@/components/BackButton"; // Import BackButton
+import { cn } from "@/lib/utils";
+import BackButton from "@/components/BackButton";
+import Logo from "@/components/Logo"; // Import the new Logo component
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [isLoginMode, setIsLoginMode] = React.useState(true); // State to manage active tab
+  const [isLoginMode, setIsLoginMode] = React.useState(true);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd send these credentials to an authentication API.
-    // For this example, we'll just simulate a successful login.
     if (email === "user@example.com" && password === "password") {
       showSuccess("Login successful! Redirecting to dashboard...");
       navigate("/dashboard");
@@ -28,25 +27,23 @@ const LoginPage = () => {
     }
   };
 
-  // For now, sign up will just show a toast and switch to login mode
   const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault();
     showSuccess("Sign Up successful! Please log in.");
     console.log("Signing up with:", { email, password });
     setEmail("");
     setPassword("");
-    setIsLoginMode(true); // Switch back to login after sign up
+    setIsLoginMode(true);
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
       <Card className="w-full max-w-md shadow-lg">
-        {/* Back button added here */}
-        <div className="flex justify-start p-2 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+          <Logo className="text-primary" />
           <BackButton />
         </div>
 
-        {/* Existing section for Login and Sign Up tabs */}
         <div className="flex border-b border-gray-200 dark:border-gray-700">
           <Button
             variant="ghost"

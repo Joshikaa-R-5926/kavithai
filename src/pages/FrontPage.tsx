@@ -4,7 +4,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Feather, FileEdit, Settings } from "lucide-react"; // Import icons for features
+import { Feather, FileEdit, Settings } from "lucide-react";
+import Logo from "@/components/Logo"; // Import the new Logo component
 
 const FrontPage = () => {
   const navigate = useNavigate();
@@ -32,30 +33,33 @@ const FrontPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
+    <div className="min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-500 to-purple-600 p-4">
       {/* Header for About, Login, and Dashboard buttons */}
-      <div className="w-full max-w-4xl flex justify-end p-4">
-        <Button
-          variant="ghost"
-          onClick={scrollToAbout}
-          className="text-white hover:bg-white/20 text-sm px-3 py-2"
-        >
-          About
-        </Button>
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/dashboard")}
-          className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
-        >
-          Dashboard
-        </Button>
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/login")}
-          className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
-        >
-          Login
-        </Button>
+      <div className="w-full max-w-4xl flex justify-between items-center p-4">
+        <Logo className="text-white" />
+        <div>
+          <Button
+            variant="ghost"
+            onClick={scrollToAbout}
+            className="text-white hover:bg-white/20 text-sm px-3 py-2"
+          >
+            About
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/dashboard")}
+            className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
+          >
+            Dashboard
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/login")}
+            className="text-white hover:bg-white/20 text-sm px-3 py-2 ml-2"
+          >
+            Login
+          </Button>
+        </div>
       </div>
 
       {/* Main Hero Section */}
